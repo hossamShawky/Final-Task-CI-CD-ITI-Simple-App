@@ -1,4 +1,5 @@
-FROM php:7.4-apache
+FROM nginx:alpine
+COPY ./*.html /usr/share/nginx/html
+COPY ./*.css /usr/share/nginx/html
+COPY ./*.js /usr/share/nginx/html
 
-RUN docker-php-ext-install mysqli
-COPY ./*.php /var/www/html/
