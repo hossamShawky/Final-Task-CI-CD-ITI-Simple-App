@@ -2,19 +2,19 @@ pipeline {
     agent any
     
     stages {
-echo "Just Test"
-stage('Checkout') {
+        stage('Checkout') {
             steps {
-
-sh """
-   echo "${BUILD_NUMBER}"
-   """
-
-
+                echo "Start Stage:build Image"
+                script {
+                    if (BRANCH_NAME == "main") {
+                        sh '''
+                            echo "Welcome in build: ${BUILD_NUMBER}"
+                        '''
+                    } else {
+                        echo "User chose ${BRANCH_NAME}"
+                    }
+                }
             }
         }
-       
-}
-
-
+    }
 }
