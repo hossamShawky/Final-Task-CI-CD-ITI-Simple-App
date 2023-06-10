@@ -6,9 +6,9 @@ echo "Just Test"
 stage('Checkout') {
             steps {
 
-sh "
+sh """
    echo "${BUILD_NUMBER}"
-   "
+   """
 
 
             }
