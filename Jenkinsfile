@@ -23,7 +23,8 @@ pipeline {
             }
         }
          stage ("deploy") {
-       echo "Start Deploy Stage: Deploy Application"
+steps{
+           echo "Start Deploy Stage: Deploy Application"
 script {
   if (BRANCH_NAME == "app") {
                         withCredentials([file(credentialsId: 'kube-credentials', variable: 'KUBECONFIG')]) { 
@@ -43,6 +44,7 @@ script {
 
 }
 
+}
     }
     
     }
