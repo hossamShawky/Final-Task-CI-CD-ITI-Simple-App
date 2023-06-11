@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "iti-node" }       
+    agent any       
     stages {
         stage('build') {
             steps {
