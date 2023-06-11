@@ -30,9 +30,9 @@ script {
                         withCredentials([file(credentialsId: 'kube-credentials', variable: 'KUBECONFIG')]) { 
                                sh '''
                           export BUILD_NUMBER=$(cat ../buildV.txt)
-             mv deployments/deployment.yaml deployments/deployment.yaml.tmp
-      cat deployments/deployment.yaml.tmp | envsubst > deployments/deployment.yaml
-                 rm -f deployments/deployment.yaml.tmp
+             mv deployments/deployment.yml deployments/deployment.yml.tmp
+      cat deployments/deployment.yml.tmp | envsubst > deployments/deployment.yml
+                 rm -f deployments/deployment.yml.tmp
            kubectl apply -f deployments --kubeconfig ${KUBECONFIG} -n ${BRANCH_NAME}
 
            echo "Dployeed Sucess"
