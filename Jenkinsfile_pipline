@@ -22,7 +22,7 @@ pipeline {
                     """
                 } 
                     } else {
-                        echo "User choose  Branch: ${BRANCH_NAME}"
+                        echo "User choosed  Var: ${params.ENV_PIPLINE}"
                     }
                 }
             }
@@ -44,7 +44,7 @@ script {
                             '''
                 } 
                     } else {
-                        echo "User choose  Branch: ${BRANCH_NAME}"
+                        echo "User choosed  Var: ${params.ENV_PIPLINE}"
                     }
 
 }
